@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foodie - Seller Registration</title>
+
+<link rel="stylesheet" href="seller-registration.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- MAIN CONTENT -->
+
+<main class="main">
+
+    <header class="foodie-header">
+        <div class="foodie-brand">
+            <span class="foodie-mark">♨</span>
+            <span>FOODIE</span>
+        </div>
+        <p><a href="seller-account.html" style="color:#fff;text-decoration:none;">← Account</a> &nbsp; | &nbsp; Seller Registration</p>
+    </header>
+
+
+    <div class="heading">
+        <h1><span>♙</span> Seller Registration</h1>
+        <p>Register a new restaurant seller on the Foodie platform</p>
+    </div>
+
+
+    <!-- STEP NAVIGATION -->
+
+    <div class="steps">
+
+        <button type="button" class="step active" data-step="0">
+            <span class="step-number">1</span>
+            <span>
+                <strong>Owner Details</strong>
+                <small>Personal information</small>
+            </span>
+        </button>
+
+        <button type="button" class="step" data-step="1">
+            <span class="step-number">2</span>
+            <span>
+                <strong>Restaurant Details</strong>
+                <small>Business information</small>
+            </span>
+        </button>
+
+        <button type="button" class="step" data-step="2">
+            <span class="step-number">3</span>
+            <span>
+                <strong>Documents</strong>
+                <small>Upload documents</small>
+            </span>
+        </button>
+
+        <button type="button" class="step" data-step="3">
+            <span class="step-number">4</span>
+            <span>
+                <strong>Review</strong>
+                <small>Confirm details</small>
+            </span>
+        </button>
+
+    </div>
+
+
+    <div class="progress-track">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+
+    <!-- REGISTRATION FORM -->
+
+    <form id="sellerForm" novalidate>
+
+    <div class="form-card">
+
+        <div class="message" id="errorMessage">
+            Please complete all required fields correctly.
+        </div>
+
+
+        <!-- STEP 1: OWNER DETAILS -->
+
+        <section class="form-step">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Owner Details</h2>
+                    <p>Enter the personal information of the restaurant owner.</p>
+                </div>
+
+                <div class="section-icon">♙</div>
+
+            </div>
+
+
+            <div class="form-grid">
+
+                <div class="field">
+                    <label>Owner Full Name <span class="required">*</span></label>
+                    <input type="text" id="ownerName"
+                        placeholder="Enter owner's full name" required>
+                </div>
+
+                <div class="field">
+                    <label>Email Address <span class="required">*</span></label>
+                    <input type="email" id="ownerEmail"
+                        placeholder="example@gmail.com" required>
+                </div>
+
+                <div class="field">
+                    <label>Mobile Number <span class="required">*</span></label>
+                    <input type="tel" id="ownerPhone"
+                        placeholder="10-digit mobile number"
+                        maxlength="10"
+                        pattern="[6-9][0-9]{9}" required>
+                </div>
+
+                <div class="field">
+                    <label>Date of Birth <span class="required">*</span></label>
+                    <input type="date" id="ownerDOB" required>
+                </div>
+
+                <div class="field">
+                    <label>Gender</label>
+                    <select id="ownerGender">
+                        <option value="">Select Gender</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                        <option>Prefer not to say</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Owner ID Type <span class="required">*</span></label>
+                    <select id="ownerIDType" required>
+                        <option value="">Select ID Type</option>
+                        <option>Aadhaar Card</option>
+                        <option>Voter ID</option>
+                        <option>Passport</option>
+                        <option>Driving Licence</option>
+                    </select>
+                </div>
+
+                <div class="field" id="ownerIDNumberField" hidden>
+                    <label id="ownerIDNumberLabel">ID Number <span class="required">*</span></label>
+                    <input type="text" id="ownerIDNumber" placeholder="Enter ID number" required disabled>
+                </div>
+
+                <div class="field full">
+                    <label>Residential Address <span class="required">*</span></label>
+                    <textarea id="ownerAddress"
+                        placeholder="Enter complete residential address"
+                        required></textarea>
+                </div>
+
+                <div class="field">
+                    <label>City <span class="required">*</span></label>
+                    <input type="text" id="ownerCity"
+                        placeholder="Enter city" required>
+                </div>
+
+                <div class="field">
+                    <label>State <span class="required">*</span></label>
+                    <select id="ownerState" required>
+                        <option value="">Select State</option>
+                        <option>Andhra Pradesh</option>
+                        <option>Arunachal Pradesh</option>
+                        <option>Assam</option>
+                        <option>Bihar</option>
+                        <option>Chhattisgarh</option>
+                        <option>Goa</option>
+                        <option>Gujarat</option>
+                        <option>Haryana</option>
+                        <option>Himachal Pradesh</option>
+                        <option>Jharkhand</option>
+                        <option>Karnataka</option>
+                        <option>Kerala</option>
+                        <option>Madhya Pradesh</option>
+                        <option>Maharashtra</option>
+                        <option>Manipur</option>
+                        <option>Meghalaya</option>
+                        <option>Mizoram</option>
+                        <option>Nagaland</option>
+                        <option>Odisha</option>
+                        <option>Punjab</option>
+                        <option>Rajasthan</option>
+                        <option>Sikkim</option>
+                        <option>Tamil Nadu</option>
+                        <option>Telangana</option>
+                        <option>Tripura</option>
+                        <option>Uttar Pradesh</option>
+                        <option>Uttarakhand</option>
+                        <option>West Bengal</option>
+                        <option>Andaman and Nicobar Islands</option>
+                        <option>Chandigarh</option>
+                        <option>Dadra and Nagar Haveli and Daman and Diu</option>
+                        <option>Delhi</option>
+                        <option>Jammu and Kashmir</option>
+                        <option>Ladakh</option>
+                        <option>Lakshadweep</option>
+                        <option>Puducherry</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <div class="field" id="ownerStateOtherField" hidden>
+                    <label>Enter State Name <span class="required">*</span></label>
+                    <input type="text" id="ownerStateOther" placeholder="Enter your state name" disabled>
+                </div>
+
+                <div class="field">
+                    <label>PIN Code <span class="required">*</span></label>
+                    <input type="text" id="ownerPin"
+                        placeholder="6-digit PIN code"
+                        maxlength="6"
+                        pattern="[0-9]{6}" required>
+                </div>
+
+                <div class="field">
+                    <label>Create Password <span class="required">*</span></label>
+                    <input type="password" id="ownerPassword" minlength="8"
+                        placeholder="At least 8 characters" autocomplete="new-password" required>
+                </div>
+
+                <div class="field">
+                    <label>Confirm Password <span class="required">*</span></label>
+                    <input type="password" id="ownerPassword2" minlength="8"
+                        placeholder="Re-enter password" autocomplete="new-password" required>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- STEP 2: RESTAURANT DETAILS -->
+
+        <section class="form-step" hidden>
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Restaurant Details</h2>
+                    <p>Provide your restaurant and business information.</p>
+                </div>
+
+                <div class="section-icon">♜</div>
+
+            </div>
+
+
+            <div class="form-grid">
+
+                <div class="field">
+                    <label>Restaurant Name <span class="required">*</span></label>
+                    <input type="text" id="restaurantName"
+                        placeholder="Enter restaurant name" required>
+                </div>
+
+                <div class="field">
+                    <label>Business Type <span class="required">*</span></label>
+                    <select id="businessType" required>
+                        <option value="">Select Business Type</option>
+                        <option>Restaurant</option>
+                        <option>Cafe</option>
+                        <option>Cloud Kitchen</option>
+                        <option>Fast Food Center</option>
+                        <option>Bakery</option>
+                        <option>Food Truck</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Cuisine Type <span class="required">*</span></label>
+                    <select id="cuisine" required>
+                        <option value="">Select Cuisine</option>
+                        <option>Indian</option>
+                        <option>South Indian</option>
+                        <option>North Indian</option>
+                        <option>Chinese</option>
+                        <option>Italian</option>
+                        <option>Continental</option>
+                        <option>Fast Food</option>
+                        <option>Multi Cuisine</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Restaurant Contact Number <span class="required">*</span></label>
+                    <input type="tel" id="restaurantPhone"
+                        placeholder="10-digit mobile number"
+                        maxlength="10"
+                        pattern="[6-9][0-9]{9}" required>
+                </div>
+
+                <div class="field">
+                    <label>Restaurant Email <span class="required">*</span></label>
+                    <input type="email" id="restaurantEmail"
+                        placeholder="restaurant@gmail.com" required>
+                </div>
+
+                <div class="field">
+                    <label>Year of Establishment</label>
+                    <input type="number" id="establishment"
+                        placeholder="e.g. 2022"
+                        min="1900" max="2026">
+                </div>
+
+                <div class="field">
+                    <label>Opening Time <span class="required">*</span></label>
+                    <input type="time" id="openingTime" required>
+                </div>
+
+                <div class="field">
+                    <label>Closing Time <span class="required">*</span></label>
+                    <input type="time" id="closingTime" required>
+                </div>
+
+                <div class="field">
+                    <label>Average Price for Two</label>
+                    <input type="number" id="price"
+                        placeholder="Enter amount in ₹" min="0">
+                </div>
+
+                <div class="field">
+                    <label>Seating Capacity</label>
+                    <input type="number" id="capacity"
+                        placeholder="Number of seats" min="0">
+                </div>
+
+                <div class="field full">
+                    <label>Restaurant Address <span class="required">*</span></label>
+                    <textarea id="restaurantAddress"
+                        placeholder="Enter complete restaurant address"
+                        required></textarea>
+                </div>
+
+                <div class="field">
+                    <label>Restaurant City <span class="required">*</span></label>
+                    <input type="text" id="restaurantCity"
+                        placeholder="Enter city" required>
+                </div>
+
+                <div class="field">
+                    <label>Restaurant PIN Code <span class="required">*</span></label>
+                    <input type="text" id="restaurantPin"
+                        placeholder="6-digit PIN code"
+                        maxlength="6"
+                        pattern="[0-9]{6}" required>
+                </div>
+
+                <div class="field full">
+                    <label>Restaurant Description</label>
+                    <textarea id="description"
+                        placeholder="Tell us about your restaurant..."></textarea>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- STEP 3: DOCUMENTS -->
+
+        <section class="form-step" hidden>
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Document Verification</h2>
+                    <p>Upload the required documents for seller verification.</p>
+                </div>
+
+                <div class="section-icon">▤</div>
+
+            </div>
+
+            <div class="document-grid">
+
+                <div class="upload-box">
+
+                    <div class="upload-icon">📄</div>
+
+                    <h4>FSSAI License <span class="required">*</span></h4>
+
+                    <p>Upload restaurant food license (PDF or image).</p>
+
+                    <label class="upload-label" for="fssai">
+                        Choose File
+                    </label>
+
+                    <input type="file" id="fssai"
+                        accept=".pdf,.jpg,.jpeg,.png"
+                        required>
+
+                    <div class="file-name" id="fssaiName">
+                        No file selected
+                    </div>
+
+                </div>
+
+
+                <div class="upload-box">
+
+                    <div class="upload-icon">🪪</div>
+
+                    <h4>Owner Identity Proof <span class="required">*</span></h4>
+
+                    <p>Upload selected owner ID proof.</p>
+
+                    <label class="upload-label" for="identity">
+                        Choose File
+                    </label>
+
+                    <input type="file" id="identity"
+                        accept=".pdf,.jpg,.jpeg,.png"
+                        required>
+
+                    <div class="file-name" id="identityName">
+                        No file selected
+                    </div>
+
+                </div>
+
+
+                <div class="upload-box">
+
+                    <div class="upload-icon">📋</div>
+
+                    <h4>PAN Card <span class="required">*</span></h4>
+
+                    <p>Upload business or proprietor PAN document.</p>
+
+                    <label class="upload-label" for="pan">
+                        Choose File
+                    </label>
+
+                    <input type="file" id="pan"
+                        accept=".pdf,.jpg,.jpeg,.png"
+                        required>
+
+                    <div class="file-name" id="panName">
+                        No file selected
+                    </div>
+
+                </div>
+
+
+                <div class="upload-box">
+
+                    <div class="upload-icon">📑</div>
+
+                    <h4>GST Certificate</h4>
+
+                    <p>Upload GST registration certificate if applicable.</p>
+
+                    <label class="upload-label" for="gst">
+                        Choose File
+                    </label>
+
+                    <input type="file" id="gst"
+                        accept=".pdf,.jpg,.jpeg,.png">
+
+                    <div class="file-name" id="gstName">
+                        No file selected
+                    </div>
+
+                </div>
+
+
+                <div class="upload-box">
+
+                    <div class="upload-icon">🏦</div>
+
+                    <h4>Bank Account Proof</h4>
+
+                    <p>Upload a bank document showing account details.</p>
+
+                    <label class="upload-label" for="bank">
+                        Choose File
+                    </label>
+
+                    <input type="file" id="bank"
+                        accept=".pdf,.jpg,.jpeg,.png">
+
+                    <div class="file-name" id="bankName">
+                        No file selected
+                    </div>
+
+                </div>
+
+
+                <div class="upload-box">
+
+                    <div class="upload-icon">🏪</div>
+
+                    <h4>Restaurant Ownership Proof</h4>
+
+                    <p>Upload a rental agreement or ownership proof.</p>
+
+                    <label class="upload-label" for="ownership">
+                        Choose File
+                    </label>
+
+                    <input type="file" id="ownership"
+                        accept=".pdf,.jpg,.jpeg,.png">
+
+                    <div class="file-name" id="ownershipName">
+                        No file selected
+                    </div>
+
+                </div>
+
+            </div>
+
+            <p class="hint" style="margin-top:20px;">
+                * FSSAI license, owner identity proof and PAN are required
+                for this demo. Other documents are optional.
+                Accepted formats: PDF, JPG, JPEG and PNG. Maximum size: 5 MB per file.
+            </p>
+
+        </section>
+
+
+        <!-- STEP 4: REVIEW -->
+
+        <section class="form-step" hidden>
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Review Your Registration</h2>
+                    <p>Check all the information before submitting.</p>
+                </div>
+
+                <div class="section-icon">✓</div>
+
+            </div>
+
+
+            <div class="review-group">
+
+                <div class="review-header">
+                    <h3>♙ Owner Details</h3>
+                    <button type="button" class="edit-btn" data-edit="0">
+                        ✎ Edit
+                    </button>
+                </div>
+
+                <div class="review-body" id="ownerReview"></div>
+
+            </div>
+
+
+            <div class="review-group">
+
+                <div class="review-header">
+                    <h3>♜ Restaurant Details</h3>
+                    <button type="button" class="edit-btn" data-edit="1">
+                        ✎ Edit
+                    </button>
+                </div>
+
+                <div class="review-body" id="restaurantReview"></div>
+
+            </div>
+
+
+            <div class="review-group">
+
+                <div class="review-header">
+                    <h3>▤ Uploaded Documents</h3>
+                    <button type="button" class="edit-btn" data-edit="2">
+                        ✎ Edit
+                    </button>
+                </div>
+
+                <div style="padding:15px 18px;" id="documentsReview"></div>
+
+            </div>
+
+
+            <label class="terms">
+
+                <input type="checkbox" id="terms">
+
+                <span>
+                    I confirm that the information provided is accurate
+                    and the documents uploaded belong to the business
+                    or owner. I agree to the seller registration terms
+                    and conditions.
+                    <span class="required">*</span>
+                </span>
+
+            </label>
+
+        </section>
+
+
+        <!-- FORM BUTTONS -->
+
+        <div class="form-footer" id="formFooter">
+
+            <button type="button" class="btn btn-secondary"
+                id="previousBtn" disabled>
+                ← Previous
+            </button>
+
+            <div class="btn-group">
+
+                <button type="button" class="btn btn-secondary"
+                    id="saveBtn">
+                    Save Draft
+                </button>
+
+                <button type="button" class="btn btn-primary"
+                    id="nextBtn">
+                    Next Step →
+                </button>
+
+                <button type="submit" class="btn btn-primary"
+                    id="submitBtn" hidden>
+                    Submit Registration ✓
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    </form>
+
+
+    <!-- SUCCESS PAGE -->
+
+    <div class="form-card success-page" id="successPage">
+
+        <div class="success-icon">✓</div>
+
+        <h2>Registration Submitted Successfully!</h2>
+
+        <p>
+            Your application has been sent to the Foodie admin and is now
+            marked as Pending Verification. You can log in with your
+            email or mobile number and password; ordering and menu tools
+            unlock as soon as the admin approves you.
+        </p>
+
+        <div class="registration-id">
+            Registration ID: <span id="registrationID"></span>
+        </div>
+
+        <p>
+            The admin can review the submitted details and
+            verify the uploaded documents.
+        </p>
+
+        <a class="btn btn-primary" href="seller-account.html" style="margin-top:25px;display:inline-block;text-decoration:none;">Go to login</a>
+        <button type="button" class="btn btn-secondary"
+            id="newRegistration" style="margin:25px 0 0 10px;">
+            + New Registration
+        </button>
+
+    </div>
+
+
+    <footer>
+        © 2026 Foodie Admin Panel | Seller Registration
+    </footer>
+
+</main>
+
+</div>
+
+<script src="seller-registration.js" defer></script>
+
+</body>
+</html>

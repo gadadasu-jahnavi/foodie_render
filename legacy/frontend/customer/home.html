@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home | Foodie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="app-body">
+  <header class="app-top">
+    <div class="brand"><span class="brand-mark"></span>Foodie</div>
+    <nav class="app-nav"><button class="on" data-view="restaurants">Restaurants</button><button data-view="orders">My orders</button><button data-view="cart">Cart <b id="cartCount">0</b></button></nav>
+    <div class="app-user"><span id="welcome">Welcome!</span><button id="logout" class="btn-ghost" type="button">Log out</button></div>
+  </header>
+
+  <main class="app-main">
+    <section id="v-restaurants">
+      <h1>Hungry? Order from kitchens near you</h1>
+      <div id="restList" class="grid"></div>
+      <div id="menuBox" hidden>
+        <button class="link-btn" id="backRest" type="button">← All restaurants</button>
+        <h2 id="menuTitle"></h2>
+        <div id="menuList" class="menu"></div>
+      </div>
+    </section>
+
+    <section id="v-cart" hidden>
+      <h1>Your cart</h1>
+      <div id="cartBox"></div>
+    </section>
+
+    <section id="v-orders" hidden>
+      <h1>My orders</h1>
+      <div id="orderList" class="orders"></div>
+    </section>
+  </main>
+
+  <div id="toast" role="status"></div>
+  <script src="home.js"></script>
+</body>
+</html>

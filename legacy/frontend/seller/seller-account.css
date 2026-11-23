@@ -1,0 +1,16 @@
+
+*{box-sizing:border-box;margin:0;padding:0;font-family:"Segoe UI",Arial,sans-serif}
+body{min-height:100vh;background:#fff8f1;color:#29221e}
+.layout{min-height:100vh;display:grid;grid-template-columns:minmax(280px,42%) 1fr}
+.side-panel{background:linear-gradient(145deg,#30231c,#171412);color:#fff;padding:42px clamp(25px,5vw,70px);display:flex;flex-direction:column;justify-content:space-between;min-height:100vh}
+.brand{font-size:29px;font-weight:850;letter-spacing:1px;color:#ff9200;display:flex;align-items:center;gap:10px}
+.mark{display:inline-grid;place-items:center;width:43px;height:43px;border-radius:12px;background:#ff9200;color:#29221e;font-size:26px}
+.pitch{margin:auto 0;max-width:440px}.pitch h1{font-size:clamp(30px,4vw,46px);line-height:1.15;margin-bottom:18px}.pitch p{color:#d0c7c1;line-height:1.8;font-size:16px}
+.panel-foot{color:#a99e97;font-size:12px;line-height:1.6}
+.content{display:flex;align-items:center;justify-content:center;padding:40px 24px}
+.card{width:min(440px,100%);background:#fff;border:1px solid #f0e7df;border-radius:20px;padding:clamp(24px,4vw,40px);box-shadow:0 15px 50px #4b2c1710}
+.card h2{font-size:28px;margin-bottom:8px}.sub{color:#777;font-size:14px;margin-bottom:25px;line-height:1.5}
+label{display:block;font-size:13px;font-weight:650;margin:15px 0 7px}input{width:100%;padding:13px;border:1px solid #ded8d2;border-radius:9px;font-size:14px;outline:none}input:focus{border-color:#ff9200}
+.btn{width:100%;border:0;border-radius:9px;padding:14px;margin-top:19px;background:#ff9200;color:#241b16;font-size:15px;font-weight:800;cursor:pointer}.btn:hover{filter:brightness(1.05)}
+.create{display:block;text-align:center;margin-top:20px;color:#6d625b;font-size:14px}.create a{color:#e87900;font-weight:750;text-decoration:none}.note{margin-top:18px;color:#888;font-size:12px;line-height:1.5;text-align:center}.message{display:none;color:#16834c;font-size:13px;margin-top:12px}
+@media(max-width:760px){.layout{grid-template-columns:1fr}.side-panel{min-height:auto;padding:24px}.pitch{margin:35px 0 20px}.pitch h1{font-size:30px}.panel-foot{display:none}.content{padding:28px 16px}}

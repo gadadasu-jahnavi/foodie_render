@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Foodie – Admin Panel</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="login" id="login" hidden>
+  <form class="login-card" id="loginForm" novalidate aria-labelledby="loginTitle">
+    <div class="login-logo">👨‍🍳</div>
+    <h1 id="loginTitle">FOODIE</h1>
+    <p class="login-sub">Admin Panel · sign in to continue</p>
+    <p class="login-msg" id="loginMsg" role="status"></p>
+    <label>Email<input id="lemail" type="email" autocomplete="username" placeholder="admin@foodie.com"></label>
+    <label>Password<span class="pw-wrap"><input id="lpw" type="password" autocomplete="current-password" placeholder="Enter your password"><button type="button" id="lpwShow" class="pw-show" aria-label="Show or hide password">Show</button></span></label>
+    <label class="remember"><input type="checkbox" id="lremember"> Keep me signed in on this device</label>
+    <small class="err" id="loginErr" role="alert"></small>
+    <button class="btn login-btn">Sign in</button>
+    <p class="login-hint" id="loginHint" hidden></p>
+  </form>
+</section>
+
+<aside class="sidebar" id="sidebar">
+  <div class="brand"><div class="logo">👨‍🍳</div><div><h1>FOODIE</h1><small>Admin Panel</small><span class="online">● Online</span></div></div>
+  <nav class="nav" id="nav"></nav>
+  <div class="side-art">🍽️</div>
+</aside>
+<div class="scrim" id="scrim"></div>
+
+<div class="main">
+  <div class="banner" id="banner" hidden>🛠️ Maintenance mode is ON</div>
+  <header class="topbar">
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    <div class="search-wrap">
+      <label class="search"><span aria-hidden="true">🔍</span><input id="globalSearch" type="search" autocomplete="off" placeholder="Search orders, users, restaurants, pages…" aria-label="Search everything" role="combobox" aria-expanded="false" aria-controls="srPanel"><kbd title="Press / to search">/</kbd></label>
+      <div class="sr-panel" id="srPanel" role="listbox" hidden></div>
+    </div>
+    <div class="top-right">
+      <div class="bell-wrap">
+        <button class="bell" id="bell" aria-label="Notifications" aria-haspopup="true" aria-expanded="false" aria-controls="notifPanel">🔔<b id="bellCount" hidden>0</b></button>
+        <div class="panel" id="notifPanel" role="dialog" aria-label="Notifications" hidden></div>
+      </div>
+      <div class="profile" id="profile">
+        <button class="profile-btn" id="profileBtn" aria-haspopup="true" aria-expanded="false"><div class="avatar" id="topAvatar"></div><span id="topName"></span><span class="caret">▾</span></button>
+        <div class="dropdown" id="dropdown">
+          <div class="dd-head"><b id="ddName"></b><small id="ddEmail"></small></div>
+          <a href="#settings?tab=profile">👤 Profile</a><a href="#settings?tab=theme">🎨 Theme</a><a href="#settings?tab=account">🔐 Account</a><a href="#settings?tab=notifications">⚙️ Settings</a><a href="#notifications">🔔 Notifications</a><a href="#logout" id="logout2">🚪 Logout</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main id="view" tabindex="-1"></main>
+</div>
+<div class="modal" id="rejModal" role="dialog" aria-modal="true" aria-labelledby="rejTitle" hidden>
+  <div class="modal-box">
+    <h3 id="rejTitle">Reject registration</h3>
+    <p class="sub">Tell <b id="rejName"></b> why this registration is being rejected.</p>
+    <label for="rejText">Reason for rejection <span aria-hidden="true" style="color:#e53935">*</span></label>
+    <textarea id="rejText" maxlength="200" placeholder="e.g. Documents are incomplete or unclear"></textarea>
+    <div class="modal-meta"><small class="err" id="rejErr" role="alert"></small><small id="rejCount">0/200</small></div>
+    <div class="modal-actions"><button type="button" class="btn ghost" id="rejCancel">Cancel</button><button type="button" class="btn danger" id="rejOk">Reject</button></div>
+  </div>
+</div>
+<div id="toast" role="status"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

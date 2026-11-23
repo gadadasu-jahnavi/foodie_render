@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Foodie – Rider Login</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Same stylesheet as the registration page -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+  <aside>
+    <div class="brand"><div class="logo" aria-hidden="true">👨‍🍳</div><div><b>FOODIE</b><span>Rider Partner</span></div></div>
+    <h2>Welcome back, rider!</h2>
+    <p>Log in to see new delivery requests and your earnings.</p>
+    <div class="wave" aria-hidden="true"></div>
+  </aside>
+
+  <main>
+    <!-- LOGIN FORM (from your sketch): Username = email or phone, Password, Login, Sign up link -->
+    <div id="loginArea">
+      <div class="top">
+        <div><h1>Log in</h1><p class="sub">Use the email or phone number you registered with.</p></div>
+      </div>
+
+      <div class="alert" id="alert" role="alert"></div>
+
+      <form id="loginForm" class="login-form" novalidate>
+        <div class="f">
+          <label for="identifier">Email or phone</label>
+          <input id="identifier" type="text" placeholder="you@example.com or 9876543210" autocomplete="username">
+          <div class="msg">Enter your email or phone number.</div>
+        </div>
+        <div class="f">
+          <label for="password">Password</label>
+          <input id="password" type="password" placeholder="Your password" autocomplete="current-password">
+          <button type="button" class="eye" data-eye="password" aria-label="Show password">👁</button>
+          <div class="msg">Enter your password.</div>
+        </div>
+        <button type="submit" class="b primary wide">Login</button>
+      </form>
+
+      <p class="foot" style="text-align:left">Don’t have an account? <a href="index.html">Sign up</a></p>
+    </div>
+
+    <!-- WELCOME SCREEN: shown after a successful login -->
+    <div class="done-box" id="welcome">
+      <div class="big">✓</div>
+      <h1>Welcome back, <span id="wName"></span>!</h1>
+      <p class="sub">You’re logged in.</p>
+      <dl class="sum" id="wSum"></dl><br>
+      <a class="b primary" href="dashboard.html">Open delivery dashboard</a>
+      <button type="button" class="b ghost" id="logout">Log out</button>
+    </div>
+  </main>
+</div>
+
+<script src="login.js"></script>
+</body>
+</html>

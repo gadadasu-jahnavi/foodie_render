@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login | Foodie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <div class="brand"><span class="brand-mark"></span>Foodie</div>
+
+    <div>
+      <h1>Welcome back</h1>
+      <p class="sub">Log in to pick up where your last order left off.</p>
+    </div>
+
+    <form id="login-form">
+      <div class="field">
+        <label for="identity">Name or email</label>
+        <input id="identity" name="identity" type="text" required autocomplete="username" placeholder="Name or email">
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" required autocomplete="current-password" placeholder="Password">
+      </div>
+      <button id="forgot" class="link-btn" type="button">Forgot password?</button>
+      <p id="message" class="message" role="alert"></p>
+      <button class="btn" type="submit">Log in</button>
+    </form>
+
+    <p class="switch">Don't have an account? <a href="register.html">Sign up</a></p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

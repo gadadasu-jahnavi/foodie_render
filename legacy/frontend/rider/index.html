@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Foodie – Rider Registration</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+  <aside>
+    <div class="brand"><div class="logo" aria-hidden="true">👨‍🍳</div><div><b>FOODIE</b><span>Rider Partner</span></div></div>
+    <h2>Deliver happiness. Earn on your schedule.</h2>
+    <p>Complete three quick steps to join the Foodie rider fleet. We review every application within 24 hours.</p>
+    <ol class="steps" id="steps">
+      <li class="active"><span class="dot">1</span>Details</li>
+      <li><span class="dot">2</span>Vehicle details</li>
+      <li><span class="dot">3</span>Documents</li>
+    </ol>
+    <div class="wave" aria-hidden="true"></div>
+  </aside>
+
+  <main>
+    <div id="formArea">
+      <div class="top">
+        <div><h1 id="title">Create your rider account</h1><p class="sub" id="sub">Tell us a little about yourself.</p></div>
+        <span class="badge" id="badge">Step 1 of 3</span>
+      </div>
+      <div class="bar"><i id="bar"></i></div>
+
+      <!-- Step 1 -->
+      <section class="step show" data-step="0">
+        <div class="grid">
+          <div class="f full"><label for="name">Full name</label><input id="name" type="text" placeholder="e.g. Ravi Kumar" autocomplete="name"><div class="msg">Enter your full name.</div></div>
+          <div class="f"><label for="email">Email</label><input id="email" type="email" placeholder="you@example.com" autocomplete="email"><div class="msg">Enter a valid email address.</div></div>
+          <div class="f"><label for="phone">Phone number</label><div class="phone"><span class="cc">+91</span><input id="phone" type="tel" inputmode="numeric" maxlength="10" placeholder="98765 43210" autocomplete="tel-national"></div><div class="msg">Enter a 10-digit mobile number.</div></div>
+          <div class="f"><label for="pw">Password</label><input id="pw" type="password" placeholder="At least 8 characters" autocomplete="new-password"><button type="button" class="eye" data-eye="pw" aria-label="Show password">👁</button><div class="msg">Use at least 8 characters.</div></div>
+          <div class="f"><label for="pw2">Confirm password</label><input id="pw2" type="password" placeholder="Re-enter password" autocomplete="new-password"><button type="button" class="eye" data-eye="pw2" aria-label="Show password">👁</button><div class="msg">Passwords don’t match.</div></div>
+        </div>
+      </section>
+
+      <!-- Step 2 -->
+      <section class="step" data-step="1">
+        <label style="margin-bottom:10px">Select vehicle</label>
+        <div class="vehicles" id="vehicles">
+          <label class="veh"><input type="radio" name="veh" value="Bike" checked><span class="em">🏍️</span><span class="t">Bike</span></label>
+          <label class="veh"><input type="radio" name="veh" value="Scooter"><span class="em">🛵</span><span class="t">Scooter</span></label>
+          <label class="veh"><input type="radio" name="veh" value="Cycle"><span class="em">🚲</span><span class="t">Cycle</span></label>
+          <label class="veh"><input type="radio" name="veh" value="Van"><span class="em">🚐</span><span class="t">Van</span></label>
+        </div>
+        <div class="grid" style="margin-top:22px" id="vfields">
+          <div class="f"><label for="lic">Licence number</label><input id="lic" type="text" placeholder="e.g. AP31 20240012345" style="text-transform:uppercase"><div class="msg">Enter your driving licence number.</div></div>
+          <div class="f"><label for="vno">Vehicle number</label><input id="vno" type="text" placeholder="e.g. AP 07 AB 1234" style="text-transform:uppercase"><div class="msg">Enter your vehicle registration number.</div></div>
+          <p class="sub full" id="cycleNote" style="display:none">Cycle riders don’t need a licence or vehicle number. You can continue.</p>
+        </div>
+      </section>
+
+      <!-- Step 3 -->
+      <section class="step" data-step="2">
+        <div class="grid" style="grid-template-columns:1fr">
+          <div class="f"><label>Upload Aadhaar</label><div class="drop" data-key="aadhaar"><input type="file" accept="image/*,.pdf"><div class="ico">🪪</div><div><b>Choose a file</b><small>Front side · JPG, PNG or PDF</small></div></div><div class="msg">Upload your Aadhaar card.</div></div>
+          <div class="f" id="licUp"><label>Upload licence</label><div class="drop" data-key="licence"><input type="file" accept="image/*,.pdf"><div class="ico">📄</div><div><b>Choose a file</b><small>Driving licence · JPG, PNG or PDF</small></div></div><div class="msg">Upload your driving licence.</div></div>
+          <div class="f"><label>Upload your photo</label><div class="drop" data-key="photo"><input type="file" accept="image/*"><div class="ico">🙂</div><div><b>Choose a photo</b><small>Clear face photo · JPG or PNG</small></div></div><div class="msg">Upload a clear photo of yourself.</div></div>
+        </div>
+      </section>
+
+      <div class="actions">
+        <button type="button" class="b ghost" id="back" style="visibility:hidden">Back</button>
+        <div class="right">
+          <button type="button" class="link" id="cancel">Cancel</button>
+          <button type="button" class="b primary" id="next">Next</button>
+        </div>
+      </div>
+      <p class="foot">Already a rider partner? <a href="login.html">Log in</a></p>
+    </div>
+
+    <div class="done-box" id="done">
+      <div class="big">✓</div>
+      <h1>You’re registered!</h1>
+      <p class="sub">Thanks, <span id="sName"></span>. Our team will verify your documents within 24 hours.</p>
+      <dl class="sum" id="sum"></dl><br>
+      <a class="b primary" href="login.html">Go to login</a>
+      <button type="button" class="b ghost" id="again">Register another rider</button>
+    </div>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

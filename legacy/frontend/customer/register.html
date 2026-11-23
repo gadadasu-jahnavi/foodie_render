@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Customer Registration | Foodie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <div class="brand"><span class="brand-mark"></span>Foodie</div>
+
+    <div>
+      <h1>Customer registration</h1>
+      <p class="sub">Create your account to order from kitchens near you.</p>
+    </div>
+
+    <form id="register-form">
+      <div class="field">
+        <label for="name">Name <span class="req" aria-hidden="true">*</span></label>
+        <input id="name" name="name" type="text" required autocomplete="name" placeholder="Your full name">
+      </div>
+      <div class="field">
+        <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
+        <input id="email" name="email" type="email" required autocomplete="email" placeholder="you@example.com">
+      </div>
+      <div class="field">
+        <label for="phone">Mobile number</label>
+        <input id="phone" name="phone" type="tel" inputmode="numeric" maxlength="10" autocomplete="tel-national" placeholder="10-digit mobile (optional)">
+      </div>
+      <div class="field">
+        <label for="city">City</label>
+        <input id="city" name="city" type="text" autocomplete="address-level2" placeholder="e.g. Visakhapatnam">
+      </div>
+      <div class="field">
+        <label for="password">Password <span class="req" aria-hidden="true">*</span></label>
+        <input id="password" name="password" type="password" required minlength="8" autocomplete="new-password" placeholder="At least 8 characters">
+      </div>
+      <p id="message" class="message" role="alert"></p>
+      <button class="btn" type="submit">Create account</button>
+    </form>
+
+    <div class="divider">or</div>
+
+    <div class="social">
+      <button type="button" data-social="Google" aria-label="Continue with Google">G</button>
+      <button type="button" data-social="Facebook" aria-label="Continue with Facebook">f</button>
+    </div>
+
+    <p class="switch">Already have an account? <a href="login.html">Log in</a></p>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

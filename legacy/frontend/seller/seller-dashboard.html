@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foodie - Seller Dashboard</title>
+<link rel="stylesheet" href="seller-dashboard.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="mark">♨</span> FOODIE <small>Seller</small></div>
+  <div class="who"><span id="who"></span><button id="logout" class="ghost">Log out</button></div>
+</header>
+<main class="wrap">
+  <div id="banner" class="banner" hidden></div>
+  <nav class="tabs"><button class="on" data-tab="orders">Orders <b id="oCount">0</b></button><button data-tab="menu">My menu</button></nav>
+
+  <section id="tab-orders">
+    <div id="orders" class="list"></div>
+  </section>
+
+  <section id="tab-menu" hidden>
+    <form id="dishForm" class="card row">
+      <input id="dName" placeholder="Dish name" required maxlength="120">
+      <input id="dEmoji" placeholder="🍛" maxlength="4" class="emoji">
+      <input id="dPrice" type="number" min="1" placeholder="Price ₹" required>
+      <button class="btn">Add dish</button>
+    </form>
+    <div id="menu" class="list"></div>
+  </section>
+</main>
+<div id="toast"></div>
+<script src="seller-dashboard.js"></script>
+</body>
+</html>
